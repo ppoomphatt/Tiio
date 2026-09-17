@@ -1,0 +1,21 @@
+const canvas = document.getElementById('flowerCanvas');
+const ctx = canvas.getContext('2d');
+const wishBtn = document.getElementById('wishBtn');
+const popup = document.getElementById('popup');
+const closeBtn = document.getElementById('closeBtn');
+
+let flowers = [];
+
+// ปรับขนาด Canvas
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+class Flower {
+    constructor(x) {
+        this.x = x;
+        this.stemH = 0;
+        this.maxStemH = Math.random() * 250 + 150;
